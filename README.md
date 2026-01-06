@@ -44,36 +44,36 @@ curl -X POST http://localhost:8000/predict \
 
 ```
 mlops-assignment/
-├── .github/workflows/       # CI/CD pipeline
-│   └── ci-cd.yml
-├── api/                     # FastAPI application
-│   └── main.py
-├── data/                    # Dataset storage
-│   ├── raw/
-│   └── processed/
-├── deployment/              # Docker & Kubernetes
-│   ├── Dockerfile
-│   └── k8s/
-│       ├── deployment.yaml
-│       └── service.yaml
-├── models/                  # Trained models
-├── mlruns/                  # MLflow tracking
-├── notebooks/               # EDA & Modeling
-│   └── 01_eda_and_modeling.ipynb
-├── screenshots/             # Documentation images
-├── src/                     # Source code
-│   ├── config.py           # Configuration
-│   ├── data_loader.py      # Data acquisition
-│   ├── preprocessing.py    # Feature engineering
-│   ├── train.py            # Model training
-│   └── predict.py          # Inference
-├── tests/                   # Unit tests
-│   ├── test_api.py
-│   ├── test_data.py
-│   └── test_model.py
-├── requirements.txt         # Dependencies
-├── pyproject.toml          # Tool configuration
-└── README.md
+|-- .github/workflows/          # CI/CD pipeline
+|   +-- ci-cd.yml
+|-- api/                        # FastAPI application
+|   +-- main.py
+|-- data/                       # Dataset storage
+|   |-- raw/
+|   +-- processed/
+|-- deployment/                 # Docker & Kubernetes
+|   |-- Dockerfile
+|   +-- k8s/
+|       |-- deployment.yaml
+|       +-- service.yaml
+|-- models/                     # Trained models
+|-- mlruns/                     # MLflow tracking
+|-- notebooks/                  # EDA & Modeling
+|   +-- 01_eda_and_modeling.ipynb
+|-- screenshots/                # Documentation images
+|-- src/                        # Source code
+|   |-- config.py               # Configuration
+|   |-- data_loader.py          # Data acquisition
+|   |-- preprocessing.py        # Feature engineering
+|   |-- train.py                # Model training
+|   +-- predict.py              # Inference
+|-- tests/                      # Unit tests
+|   |-- test_api.py
+|   |-- test_data.py
+|   +-- test_model.py
+|-- requirements.txt            # Dependencies
+|-- pyproject.toml              # Tool configuration
++-- README.md
 ```
 
 ## Features

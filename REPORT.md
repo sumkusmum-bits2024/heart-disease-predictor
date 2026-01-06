@@ -63,12 +63,12 @@ The project implements a complete MLOps pipeline from data acquisition to produc
 
 The initial data exploration revealed the following characteristics:
 
-| Statistic | Value |
-|-----------|-------|
-| Total samples | 303 |
-| Features | 13 |
-| Missing values | 6 (in `ca` and `thal` columns) |
-| Class distribution | 46% No Disease, 54% Heart Disease |
+| Statistic          | Value                              |
+|--------------------|-------------------------------------|
+| Total samples      | 303                                 |
+| Features           | 13                                  |
+| Missing values     | 6 (in `ca` and `thal` columns)      |
+| Class distribution | 46% No Disease, 54% Heart Disease   |
 
 The dataset is reasonably balanced with a slight majority of positive cases, reducing the need for specialized handling of class imbalance.
 
@@ -109,13 +109,14 @@ Categorical features showed strong predictive signals:
 The correlation matrix revealed key insights:
 
 **Top 5 features correlated with target:**
+
 | Feature | Correlation |
 |---------|-------------|
-| thal | 0.53 |
-| ca | 0.46 |
-| exang | 0.43 |
-| oldpeak | 0.42 |
-| thalach | -0.42 |
+| thal    | 0.53        |
+| ca      | 0.46        |
+| exang   | 0.43        |
+| oldpeak | 0.42        |
+| thalach | -0.42       |
 
 Notable negative correlation of `thalach` indicates that lower maximum heart rate is associated with heart disease.
 
@@ -180,11 +181,11 @@ Three classification algorithms were evaluated:
 
 *All metrics computed using 5-fold cross-validation for more robust evaluation.*
 
-| Model | Accuracy | Precision | Recall | F1-Score | ROC-AUC |
-|-------|----------|-----------|--------|----------|---------|
+| Model                   | Accuracy  | Precision | Recall | F1-Score | ROC-AUC |
+|-------------------------|-----------|-----------|--------|----------|---------|
 | **Logistic Regression** | **0.847** | **0.877** | **0.783** | **0.825** | **0.902** |
-| Random Forest | 0.831 | 0.856 | 0.770 | 0.807 | 0.889 |
-| XGBoost | 0.819 | 0.841 | 0.761 | 0.795 | 0.876 |
+| Random Forest           | 0.831     | 0.856     | 0.770  | 0.807    | 0.889   |
+| XGBoost                 | 0.819     | 0.841     | 0.761  | 0.795    | 0.876   |
 
 ![Model Comparison](screenshots/model_comparison.png)
 
@@ -305,12 +306,12 @@ on:
 
 The test suite includes:
 
-| Test File | Tests | Coverage |
-|-----------|-------|----------|
-| test_data.py | 13 | Data loading, preprocessing |
-| test_model.py | 16 | Model loading, predictions |
-| test_api.py | 12 | API endpoints |
-| **Total** | **41** | **54%** |
+| Test File      | Tests  | Coverage                    |
+|----------------|--------|------------------------------|
+| test_data.py   | 13     | Data loading, preprocessing  |
+| test_model.py  | 16     | Model loading, predictions   |
+| test_api.py    | 12     | API endpoints                |
+| **Total**      | **41** | **54%**                      |
 
 ### 5.4 Pipeline Benefits
 
@@ -347,14 +348,14 @@ FROM python:3.10-slim AS production
 
 The REST API provides:
 
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/` | GET | API information |
-| `/health` | GET | Health check with model status |
-| `/predict` | POST | Single patient prediction |
-| `/predict/batch` | POST | Batch predictions |
-| `/metrics` | GET | Prometheus metrics |
-| `/docs` | GET | Interactive API documentation |
+| Endpoint         | Method | Description                     |
+|------------------|--------|---------------------------------|
+| `/`              | GET    | API information                 |
+| `/health`        | GET    | Health check with model status  |
+| `/predict`       | POST   | Single patient prediction       |
+| `/predict/batch` | POST   | Batch predictions               |
+| `/metrics`       | GET    | Prometheus metrics              |
+| `/docs`          | GET    | Interactive API documentation   |
 
 **Request Validation:**
 - Pydantic models for input validation
@@ -508,27 +509,27 @@ This project demonstrates that building production-ready ML systems requires muc
 
 ```
 mlops-assignment/
-├── .github/workflows/ci-cd.yml
-├── api/main.py
-├── data/raw/heart.csv
-├── deployment/
-│   ├── Dockerfile
-│   ├── k8s/
-│   └── monitoring/
-├── docs/architecture.md
-├── models/
-├── mlruns/
-├── notebooks/01_eda_and_modeling.ipynb
-├── scripts/deploy.sh
-├── src/
-│   ├── config.py
-│   ├── data_loader.py
-│   ├── preprocessing.py
-│   ├── train.py
-│   └── predict.py
-├── tests/
-├── requirements.txt
-└── README.md
+|-- .github/workflows/ci-cd.yml
+|-- api/main.py
+|-- data/raw/heart.csv
+|-- deployment/
+|   |-- Dockerfile
+|   |-- k8s/
+|   +-- monitoring/
+|-- docs/architecture.md
+|-- models/
+|-- mlruns/
+|-- notebooks/01_eda_and_modeling.ipynb
+|-- scripts/deploy.sh
+|-- src/
+|   |-- config.py
+|   |-- data_loader.py
+|   |-- preprocessing.py
+|   |-- train.py
+|   +-- predict.py
+|-- tests/
+|-- requirements.txt
++-- README.md
 ```
 
 **Appendix B: API Usage Example**
