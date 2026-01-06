@@ -1,8 +1,7 @@
 # Heart Disease Prediction: An End-to-End MLOps Pipeline
 
-**Course**: MLOps (S1-25_AIMLCZG523)  
 **Assignment**: MLOps Pipeline Implementation  
-**Date**: January 2026
+**Date**: 6 January 2026
 
 ---
 
