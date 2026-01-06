@@ -104,6 +104,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
+          file: deployment/Dockerfile
           push: false
           tags: heart-disease-api:latest
           cache-from: type=gha
